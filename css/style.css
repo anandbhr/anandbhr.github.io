@@ -1561,7 +1561,8 @@ pre {
   .table-responsive-sm {
     display: block;
     width: 100%;
-    overflow-x: auto;
+    overflow-x: hidden
+;
     -webkit-overflow-scrolling: touch; }
     .table-responsive-sm > .table-bordered {
       border: 0; } }
@@ -1570,7 +1571,7 @@ pre {
   .table-responsive-md {
     display: block;
     width: 100%;
-    overflow-x: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch; }
     .table-responsive-md > .table-bordered {
       border: 0; } }
@@ -1579,7 +1580,7 @@ pre {
   .table-responsive-lg {
     display: block;
     width: 100%;
-    overflow-x: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch; }
     .table-responsive-lg > .table-bordered {
       border: 0; } }
@@ -1588,7 +1589,7 @@ pre {
   .table-responsive-xl {
     display: block;
     width: 100%;
-    overflow-x: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch; }
     .table-responsive-xl > .table-bordered {
       border: 0; } }
@@ -1596,7 +1597,7 @@ pre {
 .table-responsive {
   display: block;
   width: 100%;
-  overflow-x: auto;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch; }
   .table-responsive > .table-bordered {
     border: 0; }
@@ -3439,7 +3440,8 @@ input[type="button"].btn-block {
   display: block; }
 
 .navbar {
-  position: relative;
+  background-color: black;
+  position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8445,17 +8447,20 @@ h1, h2, h3, h4, h5,
   .owl-carousel.home-slider {
     position: relative;
     height: 750px;
-    z-index: 0; }
+    z-index: 0;
+    overflow-x: hidden !important; }
     .owl-carousel.home-slider .slider-item {
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
       height: 750px;
       position: relative;
-      z-index: 0; }
+      z-index: 0;
+      overflow-x: hidden!important; }
       @media (max-width: 1199.98px) {
         .owl-carousel.home-slider .slider-item {
-          background-position: center center !important; } }
+          background-position: center center !important; 
+          overflow-x: hidden!important;} }
       .owl-carousel.home-slider .slider-item .overlay {
         position: absolute;
         top: 0;
@@ -9780,4 +9785,64 @@ textarea.form-control {
     min-height: 100vh; /* Ensure the section takes up at least the full viewport height */
     padding-top: 30px; /* Adjust the top padding to ensure the content doesn't get hidden behind the navbar */
 }
+.custom-carousel {
+  position: relative;
+  height: 596px; /* Adjust to desired height */
+  z-index: 0;
+  overflow: hidden; /* Prevent horizontal scrolling */
+}
 
+.custom-carousel .custom-slider-item {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 596px; /* Match the height of the parent */
+  position: relative;
+  z-index: 0;
+}
+
+.custom-carousel .custom-slider-item .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000000;
+  opacity: 0;
+}
+
+.custom-carousel .custom-slider-item .slider-text {
+  height: 596px; /* Match the height of the parent */
+  z-index: 0;
+}
+
+.custom-carousel .owl-stage {
+  cursor: default; /* Prevent cursor change on drag */
+}
+
+@media (max-width: 1199.98px) {
+  .custom-carousel .custom-slider-item {
+      background-position: center center !important;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .custom-carousel .custom-slider-item .slider-text {
+      text-align: center;
+  }
+  .custom-carousel .custom-slider-item .slider-text h1 {
+      font-size: 50px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .custom-carousel .custom-slider-item .slider-text h1 {
+      font-size: 40px;
+  }
+  .custom-carousel .owl-dots {
+      bottom: 5px;
+  }
+}
+html, body {
+  overflow-x: hidden;
+}

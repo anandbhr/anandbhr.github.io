@@ -127,7 +127,19 @@
 			$this.find('.dropdown-menu').removeClass('show');
 		// }, 100);
 	});
-
+	$(document).ready(function(){
+		$('.custom-carousel').owlCarousel({
+			items: 1,
+			loop: false,       // Disable looping
+			margin: 0,
+			nav: false,        // Disable navigation buttons
+			dots: false,       // Disable dots
+			autoplay: false,   // Disable autoplay
+			mouseDrag: false,  // Disable mouse drag
+			touchDrag: false   // Disable touch drag
+		});
+	  });
+	  
 
 	$('#dropdown04').on('show.bs.dropdown', function () {
 	  console.log('show');
